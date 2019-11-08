@@ -10,9 +10,11 @@
 # 10 mins testing allocation (interactive mode) on single node with 16 cores
 qsub -I -l nodes=2:ppn=16,walltime=00:20:00 -q workq -A hpc_pmg2019
 
-#On Computing Node
 
+#On Computing Node
 cd /work/bwang31/Berea/100_100_100
+
+svn checkout https://github.com/BinWang0213/PMGImage/trunk/BereaImage/200_200_200
 
 #Prepare input file
 emacs psmesh.in
