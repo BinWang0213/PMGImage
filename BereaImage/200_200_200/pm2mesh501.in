@@ -1,0 +1,91 @@
+'INPUT FILE FOR ALL PM2MESH ALGORITHMS (v. 5.01)'
+
+'VOXELFILEINFO'
+'  Filename for base voxel data (segmented):'		Berea200_200_200.txt
+'  File type (1: ASCII; 2: Binary short):'		1
+'  Voxel dimensions (NVX,NVY,NVZ):'			200,200,200
+'  Phase range to mesh sequential numbers (T/F)?'	T
+'     If T, Phase range to mesh (IP1,IP2 inclusive):'	0,0
+
+'CUTOUT'
+'  Cutout region (xlow,xhigh):'				1,200
+'                (ylow,yhigh):'				1,200
+'                (zlow,zhigh):'				1,200
+
+'GMPPSN'
+'  Node distribution method (see below):'		1
+'  Control variables (real):',				5.0
+'  Control variables (integer):'			1,2
+'  Use .psn network for pore/throat points (T/F):'	F
+'    Network filename:',				rods021309a.psn
+'    Network built from 1.original; 2.cutout:'		1
+'    Conversion factor: network --> voxels:'		1.0
+
+'GMPGEOM'
+'  Type of object data (1:voxel 2:geometric):'		1
+'    If 2: Domain dimensions (x,y,z):'			1.,3.,1.
+'  Node distribution method (see below):'		2
+'  Control variables (real):'				
+'  Control variables (integer):'		
+
+'PM2MESH'
+'  Read Surface points:'				F
+'  Edge refinement (A:auto; U:user; N:none):'		N
+'    If A, characteristic scale for refinement:'	2.5
+
+'VOLUMEMESH'
+'  Mesh Type (2: Tet; 3: T.H.):'			3
+'  Apply user-defined BC tags to surf points (T/F):'	F
+'    If T: integer pair for BC tag:'			5,1
+
+'SMOOTHMESH'
+'  Fractional reduction each step (0.8 sugg.):'		0.8
+'  Final fractional displacement step (0.01 sugg.):'	0.01
+'  Weights for smoothing function (0-1 each):'
+'    Element condition number:'				2.0
+'    Spoke length:'					0.25
+'    Conformance to image or object surface:'		0.25
+'    Surface smoothness:'				0.25
+'    Overall domain volume/porosity:'			0.
+'    Overall domain surface area:'			0.
+'  Domain Type (V:voxel; G:geometric):'			V
+
+'LABELMESH'
+'  Label Neumann boundaries (T/F):'			T
+'    Sides for Neumann BCs (character: x, y, or z):'	z
+'    BC values for Neumann sides (2 integers):'		-2,-3
+'  Label mesh using voxel tags (T/F):'			F
+'    If T: label for non-Neumann domain boundary:'	-10
+'  Create BC file: stokesbc.in (T/F):'			T
+
+
+EXPLANATION OF CODES
+
+GMPPSN (Node distribution method)
+   1. Place GMP points using two passes & up to two characterisitic scales.
+   2. Place GMP points using probability proportional to the burn number
+
+GMPGEOM (Node distribution method)
+   1. Uniform placement of GMP points
+   2. GMP placement with surface exclusion
+   3. GMP placement with UPDF-weighted probability of point inclusion
+   4. Refined around point(s) of interest (defined in setupgeomdata)
+
+
+
+
+
+Cylinders
+'  Domain dimensions (x,y,z):'				1.,2.,1.
+'  Minimum characteristic scale in mesh:'		0.13
+
+Russia Packs
+'  Domain dimensions (x,y,z):'				22.,22.,7.5
+'  Minimum characteristic scale in mesh:'		0.5
+
+100x100 Fracture Sims (50 voxel buffer).
+'  Domain dimensions (x,y,z):'				200.,200.,175.
+'  Minimum characteristic scale in mesh:'		0.5
+
+
+

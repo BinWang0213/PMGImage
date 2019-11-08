@@ -1,0 +1,52 @@
+'INPUT FILE FOR PSMESH ALGORITHM (v. 1.01)'
+
+'DOMAIN'
+'  Domain Type (Voxel=V; Geometric=G)'			V
+
+'VOXELFILEINFO'
+'  Filename for base voxel data (segmented):'		Berea200_200_200.txt
+'  File type (1: ASCII; 2: Binary short):'		1
+'  Total Voxel dimensions (NVX,NVY,NVZ):'		200,200,200
+'  Meshed region from file (T/F)'			F
+'  Region to Mesh (Xlow,Xhigh):'			1,200
+'                 (Ylow,Yhigh):'			1,200
+'                 (Zlow,Zhigh):'			1,200
+
+'GEOMINFO'
+'  Domain dimensions x dimension:'			1.
+'                    y dimension:'			4.
+'                    z dimension:'			1.
+
+'FULLMESH'
+'  Base characteristic lengths:'			15.0,14.0,0.01
+'  Call CREATEEDGEPOINTFILE routine (T/F):'		F
+
+
+
+
+
+
+
+
+
+
+'GMPQUAD'
+'  Node distribution method (see below):'		1
+'  Control variables (real):',				7.5
+'  Control variables (integer):'			1,2
+'  Use .psn network for pore/throat points (T/F):'	F
+'    Network filename:',				newpack.psn
+'    Network built from 1.original; 2.cutout:'		1
+'    Conversion factor: network --> voxels:'		1.0
+
+'GMPGEOM'
+'  Type of object data (1:voxel 2:geometric):'		1
+'    If 2: Domain dimensions (x,y,z):'			1.,3.,1.
+'  Node distribution method (see below):'		2
+'  Control variables (real):'				
+'  Control variables (integer):'		
+
+'DTMESH'
+'  Read Surface points:'				F
+'  Edge refinement (A:auto; U:user; N:none):'		N
+'    If A, characteristic scale for refinement:'	5.0
