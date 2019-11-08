@@ -7,10 +7,12 @@
    'FULLMESH'
 
 2. Generate mesh 
-   ./fullmesh_vox.exe
+
+./fullmesh_vox.exe
 
 3. Convert mesh into nodes.dat and elements.dat
-   ./createvmesh_vox.exe
+
+./createvmesh_vox.exe
 
 . phasemap.in
 3 phase
